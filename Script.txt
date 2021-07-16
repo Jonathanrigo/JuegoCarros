@@ -1,0 +1,52 @@
+-- SCRIPT BASE DE DATOS MYSQL--
+
+--Creacion tabla conductores
+
+CREATE TABLE CONDUCTORES (IdConductor int(8) NOT NULL AUTO_INCREMENT,
+                          NombreConductor VARCHAR(40) NOT NULL,
+                          PUNTAJE SMALLINT(3),
+                          PRIMARY KEY (IdConductor));
+
+-- CREACION TABLA PISTAS
+CREATE TABLE Pistas (idPista INT (8) NOT NULL AUTO_INCREMENT,
+                     LimiteKm SMALLINT(3) DEFAULT 600,
+                     NumCarriles SMALLINT(3) DEFAULT 8,
+                     PRIMARY KEY (idPista));
+
+-- CREACION TABLA PODIO
+CREATE TABLE Podio (IdPodio int(8) NOT NULL AUTO_INCREMENT,
+                    PrimerLugar INT(8) NOT NULL,
+                    SegundoLugar INT(8) NOT NULL,
+                    TercerLugar INT(8) NOT NULL,
+                    PRIMARY KEY (IdPodio));
+
+-- CREACION TABLA JUEGO
+CREATE TABLE Juego (IdJuego int(8) NOT NULL AUTO_INCREMENT, 
+                   Jugadores INT(8) NOT NULL, 
+                   Pista INT(8) NOT NULL, 
+                   Podio INT(8) NOT NULL, 
+                   PRIMARY KEY (IdJuego)
+                   FOREIGN KEY (Jugadores) REFERENCES Conductores(IdConductor),
+                   FOREIGN KEY (Pista) REFERENCES Pistass(IdPista),
+                   FOREIGN KEY (Podio) REFERENCES Podio(IdPodio));
+
+-- CREACION TABLA CARRO
+CREATE TABLE Carros (IdCarro INT(8) NOT NULL AUTO_INCREMENT,
+                    Conductor INT(8) NOT NULL,
+                    Posicion INT (3),
+                    Distancia INT (3) NOT NULL,
+                    Juego INT (8),
+                    PRIMARY KEY (IdCarro),
+                    FOREIGN KEY (Conductor) REFERENCES conductores(IdConductor),
+                    FOREIGN KEY (Juego) REFERENCES Juego(IdJuego));
+
+-- CREACION TABLA CARRILES
+
+CREATE TABLE CARRILES (IdCarril INT(8) NOT NULL AUTO_INCREMENT,
+                      Carro INT (8),
+                      Juego INT (8),
+                      Pista INT (8),
+                      PRIMARY KEY (IdCarril),
+                      FOREIGN KEY (Carro) REFERENCES Carros(IdCarro),
+                      FOREIGN KEY (Juego) REFERENCES Juego(IdJuego),
+                      FOREIGN KEY (Pista) REFERENCES Pistas(IdPista));

@@ -13,7 +13,7 @@ public class Conexion {
     public Conexion() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/autoscarrera", "root", "");
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/juegocarrera", "root", "");
         } catch (Exception e) {
             System.out.println("Error:" + e);
         }
@@ -23,12 +23,11 @@ public class Conexion {
         Conexion cn = new Conexion();
         Statement st;
         ResultSet rs;
-
         try {
             st = cn.con.createStatement();
-            rs = st.executeQuery("select * from usuario");
+            rs = st.executeQuery("select * from Conductores");
             while (rs.next()) {
-                System.out.println(rs.getInt("id") + " " + rs.getString("user"));
+                System.out.println(rs.getInt("IdConductor") + " " + rs.getString("NombreConductor"));
             }
             cn.con.close();
         } catch (Exception e) {
