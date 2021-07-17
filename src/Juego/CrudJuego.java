@@ -40,7 +40,7 @@ public class CrudJuego {
     public void jugando() {
         idjuego = 1;
         do {
-            System.out.println("Ingrese el numero de participantes, este debe ser como minimo 3 competidores. ");
+            System.out.println("Ingrese el numero de participantes, este debe ser minimo 3. ");
             competidores = entrada.nextInt();
         } while (competidores < 3);
         for (int i = 0; i < competidores; i++) { // ciclo para insernar n competidores
@@ -60,7 +60,7 @@ public class CrudJuego {
 // metodo para configurar la pista
     public void crearPista(int i, int competidores) {
         do {
-            System.out.println("Ingrese los kilometros a recorrer en la pista , deben ser mayores a cero: ");
+            System.out.println("Ingrese los kilometros a recorrer en la pista, deben ser mayor a cero: ");
             kilometros = entrada.nextInt();
         } while (kilometros <= 0);
         pista = new Pista(i, (kilometros * 1000), competidores);

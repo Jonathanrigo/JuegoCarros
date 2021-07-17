@@ -15,9 +15,9 @@ CREATE TABLE Pistas (idPista INT (8) NOT NULL AUTO_INCREMENT,
 
 -- CREACION TABLA PODIO
 CREATE TABLE Podio (IdPodio int(8) NOT NULL AUTO_INCREMENT,
-                    PrimerLugar INT(8) NOT NULL,
-                    SegundoLugar INT(8) NOT NULL,
-                    TercerLugar INT(8) NOT NULL,
+                    PrimerLugar VARCHAR(40) NOT NULL,
+                    SegundoLugar VARCHAR(40) NOT NULL,
+                    TercerLugar VARCHAR(40) NOT NULL,
                     PRIMARY KEY (IdPodio));
 
 -- CREACION TABLA JUEGO
