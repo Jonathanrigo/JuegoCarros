@@ -11,6 +11,13 @@ public class Carril {
         return IdCarril;
     }
 
+    public Carril(int IdCarril, int Carro, int Juego, int Pista) {
+        this.IdCarril = IdCarril;
+        this.Carro = Carro;
+        this.Juego = Juego;
+        this.Pista = Pista;
+    }
+
     public void setIdCarril(int IdCarril) {
         this.IdCarril = IdCarril;
     }

@@ -3,10 +3,22 @@ package Carros;
 public class Carro {
 
     int IdCarro,
-            Conductor,
             Posicion,
-            Distancia,
-            Juego;
+            Distancia;
+    String nombre;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public Carro(int IdCarro, String nombre) {
+        this.IdCarro = IdCarro;
+        this.nombre = nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
     public int getIdCarro() {
         return IdCarro;
@@ -14,14 +26,6 @@ public class Carro {
 
     public void setIdCarro(int IdCarro) {
         this.IdCarro = IdCarro;
-    }
-
-    public int getConductor() {
-        return Conductor;
-    }
-
-    public void setConductor(int Conductor) {
-        this.Conductor = Conductor;
     }
 
     public int getPosicion() {
@@ -40,11 +44,7 @@ public class Carro {
         this.Distancia = Distancia;
     }
 
-    public int getJuego() {
-        return Juego;
-    }
-
-    public void setJuego(int Juego) {
-        this.Juego = Juego;
+    public void avanzar() {
+        Distancia = Distancia + (((int) (Math.random() * 5 + 1))*100);
     }
 }

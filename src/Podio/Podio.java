@@ -2,40 +2,53 @@ package Podio;
 
 public class Podio {
 
-    int IdPodio,
-        PrimerLugar,
-        SegundoLugar,
-        TercerLugar;
+    int idpodio;
+    String PrimerLugar,
+            SegundoLugar,
+            TercerLugar;
 
-    public int getIdPodio() {
-        return IdPodio;
+    public Podio(int idpodio, String PrimerLugar, String SegundoLugar, String TercerLugar) {
+        this.idpodio = idpodio;
+        this.PrimerLugar = PrimerLugar;
+        this.SegundoLugar = SegundoLugar;
+        this.TercerLugar = TercerLugar;
     }
 
-    public void setIdPodio(int IdPodio) {
-        this.IdPodio = IdPodio;
+    public int getIdpodio() {
+        return idpodio;
     }
 
-    public int getPrimerLugar() {
+    public void setIdpodio(int idpodio) {
+        this.idpodio = idpodio;
+    }
+
+    public String getPrimerLugar() {
         return PrimerLugar;
     }
 
-    public void setPrimerLugar(int PrimerLugar) {
+    public void setPrimerLugar(String PrimerLugar) {
         this.PrimerLugar = PrimerLugar;
     }
 
-    public int getSegundoLugar() {
+    public String getSegundoLugar() {
         return SegundoLugar;
     }
 
-    public void setSegundoLugar(int SegundoLugar) {
+    public void setSegundoLugar(String SegundoLugar) {
         this.SegundoLugar = SegundoLugar;
     }
 
-    public int getTercerLugar() {
+    public String getTercerLugar() {
         return TercerLugar;
     }
 
-    public void setTercerLugar(int TercerLugar) {
+    public void setTercerLugar(String TercerLugar) {
         this.TercerLugar = TercerLugar;
+    }
+    
+    public void mostrarPodio(){
+        System.out.println("Primer lugar para el competidor: "+ getPrimerLugar());
+        System.out.println("Segundo lugar para el competidor: "+ getSegundoLugar());
+        System.out.println("Tercer lugar para el competidor: " +getTercerLugar() );
     }
 }

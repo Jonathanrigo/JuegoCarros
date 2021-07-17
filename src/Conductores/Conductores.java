@@ -5,6 +5,12 @@ public class Conductores {
     int id, puntaje;
     String Nombre;
 
+    public Conductores(int id, String Nombre) {
+        this.id = id;
+        this.puntaje = 0;
+        this.Nombre = Nombre;
+    }
+
     // Getter and Setter para cada atributo de la clase
     public int getId() {
         return id;
