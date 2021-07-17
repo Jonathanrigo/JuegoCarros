@@ -2,10 +2,7 @@ package Carriles;
 
 public class Carril {
 
-    int IdCarril,
-            Carro,
-            Juego,
-            Pista;
+    int IdCarril, Carro, Juego, Pista;
 
     public int getIdCarril() {
         return IdCarril;

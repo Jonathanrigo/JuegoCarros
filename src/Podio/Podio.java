@@ -3,17 +3,12 @@ package Podio;
 public class Podio {
 
     int idpodio;
-    String PrimerLugar,
-            SegundoLugar,
-            TercerLugar;
+    String PrimerLugar,SegundoLugar,TercerLugar;
 
-    public Podio(int idpodio, String PrimerLugar, String SegundoLugar, String TercerLugar) {
-        this.idpodio = idpodio;
-        this.PrimerLugar = PrimerLugar;
-        this.SegundoLugar = SegundoLugar;
-        this.TercerLugar = TercerLugar;
+    public Podio() {
     }
 
+   
     public int getIdpodio() {
         return idpodio;
     }
@@ -47,8 +42,8 @@ public class Podio {
     }
     
     public void mostrarPodio(){
-        System.out.println("Primer lugar para el competidor: "+ getPrimerLugar());
-        System.out.println("Segundo lugar para el competidor: "+ getSegundoLugar());
-        System.out.println("Tercer lugar para el competidor: " +getTercerLugar() );
+        System.out.println("Primer lugar para el competidor: "+ getPrimerLugar()+".");
+        System.out.println("Segundo lugar para el competidor: "+ getSegundoLugar()+".");
+        System.out.println("Tercer lugar para el competidor: " +getTercerLugar()+".");
     }
 }

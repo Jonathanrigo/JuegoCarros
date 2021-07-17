@@ -2,9 +2,7 @@ package Carros;
 
 public class Carro {
 
-    int IdCarro,
-            Posicion,
-            Distancia;
+    int IdCarro, Posicion, Distancia;
     String nombre;
 
     public String getNombre() {
@@ -45,6 +43,6 @@ public class Carro {
     }
 
     public void avanzar() {
-        Distancia = Distancia + (((int) (Math.random() * 5 + 1))*100);
+        Distancia = (int) (Distancia + (Math.floor(Math.random()*(6-1+1)+1) * 100));
     }
 }
